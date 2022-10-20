@@ -1,0 +1,23 @@
+section{
+    display: flex;
+    align-items: center;
+
+}
+
+
+.confirmSection {
+    width: 800px;
+    border: none;
+}
+
+
+.myForm{
+    width: 100%;
+    border-radius: 0;
+    padding: 30px;
+    background-color: inherit;
+
+
+
+}
+

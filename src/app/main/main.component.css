@@ -1,0 +1,83 @@
+.myPicture {
+
+    width: 100%;
+    height: 800px;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+}
+
+.imgText {
+    position: absolute;
+
+    /*FLEX ATTRIBUTES*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*COVERS WHOLE SIZE OF PARENT*/
+
+    width: 100%;
+   margin-bottom: 100px;
+
+    background-color: rgba(166, 166, 166, 0.4);
+
+}
+
+.img {
+    position: absolute;
+    background-color: antiquewhite;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    object-fit: cover;
+    filter: brightness(70%)
+}
+
+
+.countdown {
+
+    width: auto;
+    height: 150px;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    user-select: none;
+
+
+}
+
+.countdown-item {
+
+    width: 100px;
+    height: 100px;
+    font-weight: bold;
+    color: white;
+    margin: 20px;
+    border-bottom: 3px solid white;
+}
+
+.countdown-item>.detail {
+
+    height: 20%;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.countdown-item>.value {
+
+    height: 80%;
+    font-size: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
