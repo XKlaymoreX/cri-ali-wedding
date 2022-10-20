@@ -11,14 +11,6 @@ import Invitation from '../Invitation';
   styleUrls: ['./registration-form.component.css', '../app.component.css']
 })
 export class RegistrationFormComponent  {
-
-  @ViewChild('nome') nomeRef: NgModel
-  @ViewChild('cognome') cognomeRef: ElementRef
-  @ViewChild('numero_adulti') nrAdultiRef: ElementRef
-  @ViewChild('numero_bambini') nrBambiniRef: ElementRef
-  @ViewChild('dettagli') dettagliRef: ElementRef
-
-
   
   invitation:Invitation = new Invitation("","",0,0,"")
   
@@ -28,27 +20,22 @@ export class RegistrationFormComponent  {
     [
       "Parliamo un po' di voi...",
       "Ultimo step 😁",
-      "Sto Inviando la registrazione..."
+      "Sto Inviando la registrazione...",
+      "Completato! Verrai re-indirizzato a breve ✅"
     ]
   db: Database
 
   constructor(firebaseDb: FireDb) {
     this.db = new Database(firebaseDb)
-
   }
 
   submitForm = (event:any, form: NgForm) => {
     event.preventDefault()
-
     if(form.valid){
     this.db.createInvitation(
       this.invitation
     ).then(success => {
-      if (success) {
-        console.log("SUCCESS: " + success)
-      } else {
-        console.log("Failed: " + success)
-      }
+      this.progress++
     })
   }else{
     alert("qualcosa e' andato storto!")
