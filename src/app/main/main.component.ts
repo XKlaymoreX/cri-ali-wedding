@@ -9,8 +9,6 @@ export class MainComponent implements OnInit {
 
   dateDifference?: DateInterval
 
-  imagePath: string = "src/assets/main.jpg"
-
   getDateDifference = () => {
     var weddingDate: number = new Date("July 23, 2023 13:30").getTime()
     var today: number = new Date().getTime()
@@ -34,6 +32,8 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.getDateDifference()
   }
 
 }
