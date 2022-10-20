@@ -36,6 +36,7 @@ export class RegistrationFormComponent  {
       this.invitation
     ).then(success => {
       this.progress++
+      setTimeout(() => window.location.href="/",4000)
     })
   }else{
     alert("qualcosa e' andato storto!")

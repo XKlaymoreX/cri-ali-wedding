@@ -1,6 +1,6 @@
 <section>
     <div class="confirmSection mx-auto my-4 ">
-        <div *ngIf="progress != 3">
+        <div *ngIf="progress < 3">
 
             <p class="mx-4 font-italic h4 text-center wc-text">
                 Vuoi passare il giorno più bello della nostra vita insieme a noi?
@@ -117,8 +117,8 @@
             </p>
             <!-- Progress Bar  -->
             <div class="progress-bar mx-auto w-100 d-flex justify-content-between flex-row border"
-                [ngClass]="{'bg-success': progress == 3, 'wc-bg':progress != 3}">
-                <div [ngClass]="{'bg-white':true,'wc-text':progress != 3, 'text-success':progress==3,'wc-border-2':progress != 3, 'border border-success':progress==3}"
+                [ngClass]="{'bg-success': progress >= 3, 'wc-bg':progress <= 2}">
+                <div [ngClass]="{'bg-white':true,'wc-text':progress >= 3, 'text-success':progress >= 3,'wc-border-2':progress <= 2, 'border border-success':progress >=3}"
                     [ngStyle]="{width:progress == 1 ? '50%' : (progress == 2 ? '99%' : '100%'),transition:'.5s'}">
                     {{progressPercentage}}%
                 </div>
@@ -135,7 +135,7 @@
                     >
                     {{progress == 2 ? 'Invia' : 'Prossimo'}}
                 </button>
-                <input type="submit" (click)="incrementProgress()" class="btn text-white w-25 my-4 btn-success" [ngStyle]="{display: progress == 3 ? 'none' : 'block'}"
+                <input type="submit" (click)="incrementProgress()" class="btn text-white w-25 my-4 btn-success" [ngStyle]="{display: progress >= 3 ? 'none' : 'block'}"
                 *ngIf="progress >= 2" value="Invia" 
                 />
             </div>

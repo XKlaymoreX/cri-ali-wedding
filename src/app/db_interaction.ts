@@ -15,7 +15,7 @@ export class Database {
 
 
     createInvitation = async (invitation : Invitation): Promise<boolean> => {
-        const endPoint = "partecipazioni/"+(invitation.cognome.concat(invitation.nome).toLowerCase())
+        const endPoint = "partecipazioni/"+(invitation.cognome.concat("-"+invitation.nome).toLowerCase())
         try {
            await set(ref(this.database,endPoint),invitation)
            return true
