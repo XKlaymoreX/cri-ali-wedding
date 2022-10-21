@@ -10,6 +10,7 @@
 
 }
 
+/*Image Text Container, Fixed, takes whole size of parent*/
 .imgText {
     position: absolute;
     /*FLEX ATTRIBUTES*/
@@ -19,33 +20,37 @@
     /*COVERS WHOLE SIZE OF PARENT*/
     height: 100%;
     width: 100%;
+
+    border: 2px solid white;
 }
 
 .imgTitle{
     display: flex;
     flex-flow: column;
     text-align: center;
-    margin-left: 150px;
+    margin-left: 5%;
     margin-bottom: 200px;
-
 }
+
+/*Text alignment*/
 
 .imgTitle > span:nth-child(1){
     font-weight: bold;
-    font-size: 80px;
+    font-size: clamp(20px, 6.5vw, 70px);
     color: black;
     font-family: 'Dancing Script';
+    border-bottom: 1px solid white;
 }
-
 .imgTitle > span:nth-child(2){
 
     font-weight: bold;
-    font-size: 40px;
+    font-size: clamp(20px, 3vw, 70px);
     color: white;
     font-family: 'Poppins';
     transform: uppercase;
 }
 
+/*Image Settings*/
 .img {
     position: absolute;
     background-color: antiquewhite;
@@ -53,24 +58,19 @@
     height: 100%;
     z-index: -1;
 
-    object-position: 0 -10px;
+    object-position: center 0px;
     object-fit: cover;
 }
 
 
+/*Countdown*/
 .countdown {
-
     width: auto;
     height: 150px;
-
     display: flex;
     justify-content: space-evenly;
-
     user-select: none;
-
-
 }
-
 .countdown-item {
 
     width: 100px;
@@ -80,7 +80,6 @@
     margin: 20px;
     border-bottom: 3px solid white;
 }
-
 .countdown-item>.detail {
 
     height: 20%;
@@ -90,7 +89,6 @@
     align-items: center;
 
 }
-
 .countdown-item>.value {
 
     height: 80%;
@@ -99,4 +97,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 900px) {
+    .imgText{
+        align-items: flex-end;
+        border: 1px solid black;
+    }
+
+    .imgTitle{
+        background-color: hsla(213, 37%, 52%, .7);
+        width: 100%;
+        margin: 100px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 0;
+    }
+
+    .imgTitle > span:nth-child(1){
+        font-weight: bold;
+        font-size: 60px;
+        color: white;
+        font-family: 'Dancing Script';
+    }
+    .imgTitle > span:nth-child(2){
+    
+        font-weight: bold;
+        font-size: 30px;
+        color: white;
+        font-family: 'Poppins';
+        transform: uppercase;
+    }
 }

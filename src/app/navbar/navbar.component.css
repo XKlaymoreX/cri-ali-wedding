@@ -1,4 +1,57 @@
-nav {
+.my-navbar {
+    background-color: transparent;
+    width: 100%;
+    font-family: 'Poppins';
+    height: 70px;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.my-navbar-transparent{
     background-color: transparent;
     position: fixed;
+    z-index: +1;
+}
+
+.my-navbar-brand{
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    user-select: none;
+}
+.my-navbar-items{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+}
+
+.my-navbar-item{
+    list-style: none;
+    font-weight: bold;
+    user-select: none;
+}
+
+.my-navbar-item > a{
+    color: black;
+}
+
+.my-navbar-item > a:hover{
+    color: rgb(60, 60, 60);
+}
+
+@media (max-width: 768px) {
+
+    .my-navbar-items{
+        display: none;
+    }
+
+
 }
