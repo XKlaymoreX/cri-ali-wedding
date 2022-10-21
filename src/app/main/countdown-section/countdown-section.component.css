@@ -1,7 +1,9 @@
-
+/*
+    background-color: #5881b3;
+*/
 
 section{
-    height: 800px;
+    height: 1500px;
 }
 
 /*Countdown*/
@@ -13,7 +15,6 @@ section{
     user-select: none;
 }
 .countdown-item {
-
     width: 100px;
     height: 100px;
     font-weight: bold;
@@ -22,18 +23,14 @@ section{
     border-bottom: 3px solid black;
 }
 .countdown-item>.detail {
-
     height: 20%;
     font-size: 13px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: black;
-
-
 }
 .countdown-item>.value {
-
     height: 80%;
     font-size: 30px;
     color: black;
