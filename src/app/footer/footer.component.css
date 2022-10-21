@@ -88,6 +88,29 @@ a:any-link:hover{
 
 @media ( max-width : 520px){
     * {
-        font-size:10px
+        font-size:13px
     }
+
+    .my-footer-content{
+        flex-direction: row;
+    }
+
+    .my-footer-links{
+        flex-direction: column;
+        border: none;
+        border-right: 1px solid white;
+    }
+
+    .my-footer-contacts{
+        flex-direction: column;
+        padding: 10px 10px;
+    }
+
+    .my-footer-contacts > :first-child{
+
+        border: none;
+        border-bottom: 1px solid white;
+        padding: 10px 0;
+    }
+
 }
