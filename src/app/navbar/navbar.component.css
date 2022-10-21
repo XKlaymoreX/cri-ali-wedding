@@ -17,6 +17,8 @@
 }
 .my-navbar-toggler{
     display: none;
+    outline: none;
+    border: none;
 }
 
 .my-navbar-brand{
@@ -42,7 +44,7 @@
 }
 
 .my-navbar-item > a{
-    color: black;
+    color: white;
 }
 
 .my-navbar-item > a:hover{
