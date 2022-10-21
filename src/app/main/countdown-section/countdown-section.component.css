@@ -1,0 +1,38 @@
+
+/*Countdown*/
+.countdown {
+    width: auto;
+    height: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    user-select: none;
+}
+.countdown-item {
+
+    width: 100px;
+    height: 100px;
+    font-weight: bold;
+    color: white;
+    margin: 20px;
+    border-bottom: 3px solid black;
+}
+.countdown-item>.detail {
+
+    height: 20%;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+
+
+}
+.countdown-item>.value {
+
+    height: 80%;
+    font-size: 30px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,6 +1,8 @@
 .my-navbar {
     background-color: transparent;
     width: 100%;
+    max-width: 1800px;
+    margin: auto;
     font-family: 'Poppins';
     height: 70px;
     padding: 0 30px;
@@ -43,13 +45,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 300px;
+    width: auto;
 }
 
 .my-navbar-item {
     list-style: none;
     font-weight: bold;
     user-select: none;
+    padding: 0 20px;
 }
 
 .my-navbar-item>a {

@@ -11,6 +11,8 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { FormsModule } from '@angular/forms';
+import { LandingSectionComponent } from './main/landing-section/landing-section.component';
+import { CountdownSectionComponent } from './main/countdown-section/countdown-section.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     MainComponent,
     RegistrationFormComponent,
+    LandingSectionComponent,
+    CountdownSectionComponent,
   ],
   imports: [
     BrowserModule,

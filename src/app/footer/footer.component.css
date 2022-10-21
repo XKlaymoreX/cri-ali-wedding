@@ -1,0 +1,86 @@
+footer {
+    background-color: #5881b3;
+    height: 300px;
+    color: white;
+    padding: 0 30px;
+
+    font-family: 'Poppins';
+}
+
+.my-footer-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex-flow: column;
+    position: relative;
+}
+
+ul{
+    list-style-type: none;
+}
+
+
+a:any-link{
+    color: white;
+    text-decoration: none;
+}
+
+a:any-link:hover{
+    color: black;
+}
+
+
+
+.my-footer-links {
+    display: flex;
+    width: 400px;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 10px;
+    border-bottom: 1px solid white;
+}
+
+.my-footer-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.my-footer-link > a {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+
+.my-footer-contacts{
+    display: flex;
+}
+
+.my-footer-contacts > :first-child{
+    height: 100%;
+    padding: 0 15px;
+    display: flex;
+    flex-flow: column;
+    justify-content: start;
+
+    border-right: 1px solid white;
+}
+
+.my-footer-contacts > :last-child{
+    height: 100%;
+}
+
+
+.my-footer-dev-signature{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    text-align: center;
+}

@@ -1,0 +1,122 @@
+.myPicture {
+
+    width: 100%;
+    height: 800px;
+    position: relative;
+
+    min-height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+}
+
+/*Image Text Container, Fixed, takes whole size of parent*/
+.imgText {
+    position: absolute;
+    /*FLEX ATTRIBUTES*/
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    /*COVERS WHOLE SIZE OF PARENT*/
+    height: 100%;
+    width: 100%;
+
+}
+
+.imgTitle{
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    margin-left: 5%;
+    margin-bottom: 200px;
+}
+
+/*Text alignment*/
+
+.imgTitle > span:nth-child(1){
+    font-weight: bold;
+    font-size: clamp(20px, 6.5vw, 70px);
+    color: black;
+    font-family: 'Dancing Script';
+    border-bottom: 1px solid white;
+}
+.imgTitle > span:nth-child(2){
+
+    font-weight: bold;
+    font-size: clamp(20px, 3vw, 70px);
+    color: white;
+    font-family: 'Poppins';
+    transform: uppercase;
+}
+
+/*Image Settings*/
+.img {
+    position: absolute;
+    background-color: antiquewhite;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    object-position: center 0px;
+    object-fit: cover;
+}
+
+.img-mobile{
+
+    position: absolute;
+    background-color: antiquewhite;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    object-position: center 0px;
+    object-fit: cover;
+
+    display: none;
+}
+
+
+@media (max-width: 900px) {
+    .imgText{
+        align-items: flex-end;
+    }
+
+    .imgTitle{
+        background-color: hsla(213, 37%, 52%, .7);
+        width: 100%;
+        margin: 100px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 0;
+    }
+
+    .imgTitle > span:nth-child(1){
+        font-weight: bold;
+        font-size: 60px;
+        color: white;
+        font-family: 'Dancing Script';
+    }
+    .imgTitle > span:nth-child(2){
+    
+        font-weight: bold;
+        font-size: 30px;
+        color: white;
+        font-family: 'Poppins';
+        transform: uppercase;
+    }
+}
+
+@media (max-width: 768px){
+    .myPicture{
+        height: calc(100vh - 70px);
+    }
+    .img{
+        display: none;
+    }
+
+    .img-mobile{
+        display: block;
+    }
+}
