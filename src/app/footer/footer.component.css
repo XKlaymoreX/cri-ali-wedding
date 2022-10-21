@@ -1,6 +1,6 @@
 footer {
     background-color: #5881b3;
-    height: 300px;
+    height: 400px;
     color: white;
     padding: 0 30px;
 
@@ -83,4 +83,11 @@ a:any-link:hover{
     width: 100%;
 
     text-align: center;
+}
+
+
+@media ( max-width : 520px){
+    * {
+        font-size:10px
+    }
 }
