@@ -102,7 +102,6 @@
 @media (max-width: 900px) {
     .imgText{
         align-items: flex-end;
-        border: 1px solid black;
     }
 
     .imgTitle{
@@ -128,5 +127,11 @@
         color: white;
         font-family: 'Poppins';
         transform: uppercase;
+    }
+}
+
+@media (max-width: 520px){
+    .myPicture{
+        height: 100vh;
     }
 }
