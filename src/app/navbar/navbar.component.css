@@ -10,24 +10,32 @@
 
 }
 
-.my-navbar-transparent{
+.my-navbar-transparent {
     background-color: transparent;
     position: fixed;
     z-index: +1;
 }
-.my-navbar-toggler{
+
+.my-navbar-toggler {
     display: none;
     outline: none;
     border: none;
 }
 
-.my-navbar-brand{
+.my-navbar-toggler-inner {
+    display: none;
+    outline: none;
+    border: none;
+}
+
+.my-navbar-brand {
     font-weight: bold;
     color: white;
     font-size: 20px;
     user-select: none;
 }
-.my-navbar-items{
+
+.my-navbar-items {
     padding: 0;
     margin: 0;
     height: 100%;
@@ -37,30 +45,80 @@
     width: 300px;
 }
 
-.my-navbar-item{
+.my-navbar-item {
     list-style: none;
     font-weight: bold;
     user-select: none;
 }
 
-.my-navbar-item > a{
+.my-navbar-item>a {
     color: white;
 }
 
-.my-navbar-item > a:hover{
+.my-navbar-item>a:hover {
     color: rgb(60, 60, 60);
 }
 
 @media (max-width: 768px) {
-    .my-navbar-items{
-        display: none;
+    .my-navbar-items {
+        position: fixed;
+        z-index: +1;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        left: 100vw;
+        background-color: white;
+        transition: 1s ease-in-out;
+
+
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+
     }
 
-    .my-navbar-brand{
+
+    .my-navbar-toggler-inner {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 50px;
+
+        rotate: -180deg;
+
+    }
+
+    .my-navbar-item {
+        width: 100px;
+        padding: 40px 100px;
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+
+    .my-navbar-item:hover {
+        border-bottom: 3px solid black;
+    }
+
+    .my-navbar-item>a {
+
+        font-size: 30px;
         color: black;
     }
 
-    .my-navbar-toggler{
+    .my-navbar-brand {
+        color: black;
+    }
+
+    .my-navbar-toggler {
         display: block;
     }
 }

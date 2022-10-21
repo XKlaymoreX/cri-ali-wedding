@@ -7,7 +7,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  collapsed: boolean = false
+  toggled: boolean = true
   transparent: boolean = true
 
   @HostListener('window:resize', ['$event'])
@@ -19,14 +19,14 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  constructor() { 
+  expandNavbar = () => this.toggled = !this.toggled
 
+  constructor() { 
     if(window.innerWidth < 768){
       this.transparent = false
     }else{
       this.transparent = true
     }
-
   }
 
   ngOnInit(): void {
