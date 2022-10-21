@@ -8,13 +8,15 @@
     justify-content: space-between;
     align-items: center;
 
-
 }
 
 .my-navbar-transparent{
     background-color: transparent;
     position: fixed;
     z-index: +1;
+}
+.my-navbar-toggler{
+    display: none;
 }
 
 .my-navbar-brand{
@@ -48,10 +50,15 @@
 }
 
 @media (max-width: 768px) {
-
     .my-navbar-items{
         display: none;
     }
 
+    .my-navbar-brand{
+        color: black;
+    }
 
+    .my-navbar-toggler{
+        display: block;
+    }
 }
