@@ -20,6 +20,7 @@
     display: none;
     outline: none;
     border: none;
+    background-color: transparent;
 }
 
 .my-navbar-toggler-inner {
@@ -88,6 +89,7 @@
         right: 50px;
 
         rotate: -180deg;
+        background-color: transparent;
 
     }
 

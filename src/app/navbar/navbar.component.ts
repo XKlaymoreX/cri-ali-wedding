@@ -7,7 +7,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  toggled: boolean = true
+  toggled: boolean = false
   transparent: boolean = true
 
   @HostListener('window:resize', ['$event'])
