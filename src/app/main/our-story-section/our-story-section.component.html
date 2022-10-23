@@ -1,0 +1,17 @@
+<section>
+    <h2>La nostra Storia</h2>
+    <div class="story-timeline" [ngStyle]="{height:storyItems.length * 220+'px'}"></div>
+    <div 
+        class="story-content"
+        *ngFor="let story of storyItems; let i = index"
+        [ngClass]="{'story-content-reversed':( i % 2 == 0 ? true : false )}"
+        >
+        <app-round-image [roundImage]="story.imagePath" [imageAlt]="story.description"></app-round-image>
+        <div>
+            <span>
+                {{story.date}}
+            </span>
+        </div>
+        <p>{{story.description}}</p>
+    </div>
+</section>

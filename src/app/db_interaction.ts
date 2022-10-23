@@ -1,5 +1,5 @@
 import {Database as FireDb, ref, set,push} from "@angular/fire/database"
-import Invitation from "./Invitation"
+import Invitation from "./Invitation.class"
 
 export class Response {
 
@@ -25,6 +25,16 @@ export class Database {
         }
     }
 
+    createSong = async (song : {songName:string, artist:string}): Promise<boolean> => {
+        const endPoint = "canzoni/"+(song.songName.concat("-"+song.artist).toLowerCase())
+        try {
+           await set(ref(this.database,endPoint),song)
+           return true
+        } catch (error) {
+            console.log(error.message)
+            return false
+        }
+    }
 
 
 }

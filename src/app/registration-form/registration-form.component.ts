@@ -2,7 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Database as FireDb } from '@angular/fire/database';
 import { NgModel, NgForm } from '@angular/forms';
 import { Database } from '../db_interaction';
-import Invitation from '../Invitation';
+import Invitation from '../Invitation.class';
 
 
 @Component({

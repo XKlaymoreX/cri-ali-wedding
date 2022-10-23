@@ -1,0 +1,35 @@
+<section>
+    <h2 class="wc-text">Consigliaci delle canzoni per la festa!</h2>
+    <form class="form" [ngStyle]="{display:succeded ? 'none' : 'block'}" (submit)="submitForm($event, form)" #form="ngForm">
+        <div class="form-group py-2">
+            <label for="">Nome Canzone</label>
+            <input 
+                type="text" 
+                name="song-name" 
+                id="song-name" 
+                class="w-input form-control" 
+                [ngClass]="{'w-input-invalid': songName.invalid && songName.touched ? true : false}"
+                [(ngModel)]="song.songName"
+                [required]
+                [minlength]="3"
+                #songName="ngModel"
+                 />
+        </div>
+        <div class="form-group py-2">
+            <label for="">Artista</label>
+            <input
+                 type="text"
+                 name="artist"
+                 id="artist" 
+                 class="w-input form-control" 
+                 [ngClass]="{'w-input-invalid': artist.invalid && artist.touched ? true : false}"
+                 [(ngModel)]="song.artist"
+                 #artist="ngModel"
+                 />
+        </div>
+        <input type="submit" value="Invia" class="btn wc-bg text-white my-3" />
+    </form>
+    <div class="alert alert-success" [ngStyle]="{display: succeded ? 'block' : 'none'}">
+        Grazie!
+    </div>
+</section>

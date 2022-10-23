@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DateInterval } from 'src/app/DateInterval';
+import { DateInterval } from 'src/app/date-interval.interface';
 
 @Component({
   selector: 'app-countdown-section',

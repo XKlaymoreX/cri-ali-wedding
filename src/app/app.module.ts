@@ -13,6 +13,9 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { FormsModule } from '@angular/forms';
 import { LandingSectionComponent } from './main/landing-section/landing-section.component';
 import { CountdownSectionComponent } from './main/countdown-section/countdown-section.component';
+import { OurStorySectionComponent } from './main/our-story-section/our-story-section.component';
+import { RoundImageComponent } from './main/our-story-section/round-image/round-image.component';
+import { SongFormComponent } from './song-form/song-form.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { CountdownSectionComponent } from './main/countdown-section/countdown-se
     RegistrationFormComponent,
     LandingSectionComponent,
     CountdownSectionComponent,
+    OurStorySectionComponent,
+    RoundImageComponent,
+    SongFormComponent,
   ],
   imports: [
     BrowserModule,
