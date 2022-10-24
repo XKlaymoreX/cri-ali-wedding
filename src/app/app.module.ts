@@ -16,6 +16,10 @@ import { CountdownSectionComponent } from './main/countdown-section/countdown-se
 import { OurStorySectionComponent } from './main/our-story-section/our-story-section.component';
 import { RoundImageComponent } from './main/our-story-section/round-image/round-image.component';
 import { SongFormComponent } from './song-form/song-form.component';
+import { PartecipaComponent } from './partecipa/partecipa.component';
+import { LocationComponent } from './location/location.component';
+import { DettagliComponent } from './dettagli/dettagli.component';
+import { GalleriaComponent } from './galleria/galleria.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,10 @@ import { SongFormComponent } from './song-form/song-form.component';
     OurStorySectionComponent,
     RoundImageComponent,
     SongFormComponent,
+    PartecipaComponent,
+    LocationComponent,
+    DettagliComponent,
+    GalleriaComponent,
   ],
   imports: [
     BrowserModule,

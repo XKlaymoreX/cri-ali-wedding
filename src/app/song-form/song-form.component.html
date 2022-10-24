@@ -1,5 +1,5 @@
 <section>
-    <h2 class="wc-text">Consigliaci delle canzoni per la festa!</h2>
+    <h4 class="wc-text">Consigliaci delle canzoni per la festa!</h4>
     <form class="form" [ngStyle]="{display:succeded ? 'none' : 'block'}" (submit)="submitForm($event, form)" #form="ngForm">
         <div class="form-group py-2">
             <label for="">Nome Canzone</label>
@@ -10,8 +10,8 @@
                 class="w-input form-control" 
                 [ngClass]="{'w-input-invalid': songName.invalid && songName.touched ? true : false}"
                 [(ngModel)]="song.songName"
-                [required]
-                [minlength]="3"
+                required
+                minlength="3"
                 #songName="ngModel"
                  />
         </div>
@@ -24,10 +24,12 @@
                  class="w-input form-control" 
                  [ngClass]="{'w-input-invalid': artist.invalid && artist.touched ? true : false}"
                  [(ngModel)]="song.artist"
+                 required
+                 minlength="3"
                  #artist="ngModel"
                  />
         </div>
-        <input type="submit" value="Invia" class="btn wc-bg text-white my-3" />
+        <input type="submit" value="Invia" class="btn wc-bg text-white my-3" [disabled]="form.invalid"/>
     </form>
     <div class="alert alert-success" [ngStyle]="{display: succeded ? 'block' : 'none'}">
         Grazie!

@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-
+import { Router, Event, NavigationStart, NavigationEnd, NavigationError, Route} from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -8,27 +8,47 @@ import { Component, HostListener, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   toggled: boolean = false
-  transparent: boolean = true
+  currentRoute : string = ""
+  isTransparent: boolean 
+  isMainPage : boolean
 
   @HostListener('window:resize', ['$event'])
   onResize(event){
     if(window.innerWidth < 768){
-      this.transparent = false
+      this.isTransparent = false
     }else{
-      this.transparent = true
+      if(this.isMainPage){
+        this.isTransparent = true
+      }else{
+        this.isTransparent = false
+      }
     }
   }
 
   expandNavbar = () => this.toggled = !this.toggled
 
-  constructor() { 
+  constructor( private router : Router) { 
 
-    console.log(window.location.pathname)
-    if(window.innerWidth < 768 || window.location.pathname == "/partecipa"){
-      this.transparent = false
-    }else{
-      this.transparent = true
+    this.router.events.subscribe((event: Event) => {
+
+      if(event instanceof NavigationStart){
+        //Navigation starts
+        if(event.url == "/"){
+          this.isMainPage = true
+          this.isTransparent = true
+        }else{
+          this.isMainPage = false
+          this.isTransparent = false
+        }
+      }
+      if (event instanceof NavigationEnd) {
+
+        //Navigation ends, the url sets to the current route
+        this.currentRoute = event.url;          
+        console.log(event);
     }
+    })
+
   }
 
   ngOnInit(): void {

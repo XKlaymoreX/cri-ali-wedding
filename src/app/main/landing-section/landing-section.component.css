@@ -29,7 +29,7 @@
     flex-flow: column;
     text-align: center;
     margin-left: 5%;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 
 /*Text alignment*/
@@ -37,7 +37,7 @@
 .imgTitle > span:nth-child(1){
     font-weight: bold;
     font-size: clamp(20px, 6.5vw, 70px);
-    color: black;
+    color: white;
     font-family: 'Dancing Script';
     border-bottom: 1px solid white;
 }
@@ -50,6 +50,15 @@
     transform: uppercase;
 }
 
+.blue-layer{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #5881B3;
+    opacity: .2;
+
+}
+
 /*Image Settings*/
 .img {
     position: absolute;
@@ -60,6 +69,7 @@
 
     object-position: center 0px;
     object-fit: cover;
+    background-attachment: fixed;
 }
 
 .img-mobile{

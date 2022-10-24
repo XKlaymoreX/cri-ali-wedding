@@ -15,6 +15,7 @@ export class SongFormComponent implements OnInit {
   db : Database
 
   submitForm = (event: any, form: NgForm) => {
+    alert(form.valid)
     event.preventDefault()
     if (form.valid) {
       this.db.createSong(this.song).then(

@@ -9,13 +9,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .my-navbar-transparent {
     background-color: transparent;
     position: absolute;
     z-index: +1;
+}
+
+.my-navbar-bg {
+    background-color: #5881b3;
+    width: 100%;
+    max-width: 1800px;
+    margin: auto;
+    font-family: 'Poppins';
+    height: 70px;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .my-navbar-toggler {
@@ -57,6 +69,7 @@
 
 .my-navbar-item>a {
     color: white;
+    font-weight: 300;
 }
 
 .my-navbar-item>a:hover {
@@ -64,9 +77,12 @@
 }
 
 @media (max-width: 768px) {
+
+   
+
     .my-navbar-items {
         position: fixed;
-        z-index: +1;
+        z-index: +2;
         width: 100vw;
         height: 100vh;
         margin: 0;
@@ -75,7 +91,6 @@
         left: 100vw;
         background-color: white;
         transition: .5s ease;
-
 
         display: flex;
         flex-flow: column;
@@ -89,8 +104,7 @@
         display: block;
         position: absolute;
         top: 30px;
-        right: 30px;
-
+        right: 50px;
         rotate: -180deg;
         background-color: transparent;
 
@@ -110,17 +124,19 @@
     }
 
     .my-navbar-item:hover {
-        border-bottom: 3px solid black;
+        border-bottom: 3px solid  #5881b3;
+        ;
     }
 
     .my-navbar-item>a {
 
         font-size: 30px;
-        color: black;
+        color: #5881b3;
     }
 
     .my-navbar-brand {
-        color: black;
+        color: white;
+
     }
 
     .my-navbar-toggler {

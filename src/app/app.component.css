@@ -5,6 +5,7 @@
 #6c2ed0 -> Viola
 #734db0 -> Viola 2
 #505050 -> Neutrale
+#5881b3 -> blu
 */
 
 
@@ -23,7 +24,7 @@ a:link{
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom:2px solid #734db0;
+    border-bottom:2px solid #5881b3;
     box-shadow: none;
     outline: none;
     outline-width: 0;
@@ -35,7 +36,7 @@ a:link{
 
 /*Wedding Colour - Background*/
 .wc-bg{
-    background-color:#734db0;
+    background-color:#5881b3;
 }
 
 .wc-bg-neutral{
@@ -44,11 +45,11 @@ a:link{
 
 /*Wedding Colour - Text*/
 .wc-text{
-    color: #734db0;
+    color: #5881b3;
 }
 
 .wc-border-1{
-    border: 1px solid #734db0;
+    border: 1px solid #5881b3;
 }
 
 .wc-border-neutral-1{
@@ -56,7 +57,7 @@ a:link{
 }
 
 .wc-border-2{
-    border: 2px solid #734db0;
+    border: 2px solid #5881b3;
     animation: 2s;
 }
 
