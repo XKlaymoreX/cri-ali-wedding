@@ -53,3 +53,11 @@
     object-position: center 0px;
     object-fit: cover;
 }
+
+
+@media(max-width: 768px){
+    .myPicture{
+        height: calc(70vh);
+    }
+ 
+}

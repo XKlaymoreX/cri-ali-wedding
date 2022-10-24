@@ -53,3 +53,31 @@
     object-position: center;
     object-fit: cover;
 }
+
+.img-mobile{
+
+    position: absolute;
+    background-color: antiquewhite;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    object-position: center 0px;
+    object-fit: cover;
+
+    display: none;
+}
+
+
+@media(max-width: 768px){
+    .myPicture{
+        height: calc(70vh);
+    }
+    .img{
+        display: none;
+    }
+
+    .img-mobile{
+        display: block;
+    }
+}
