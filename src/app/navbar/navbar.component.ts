@@ -22,7 +22,9 @@ export class NavbarComponent implements OnInit {
   expandNavbar = () => this.toggled = !this.toggled
 
   constructor() { 
-    if(window.innerWidth < 768){
+
+    console.log(window.location.pathname)
+    if(window.innerWidth < 768 || window.location.pathname == "/partecipa"){
       this.transparent = false
     }else{
       this.transparent = true
