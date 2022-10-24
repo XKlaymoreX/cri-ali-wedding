@@ -20,6 +20,7 @@ import { PartecipaComponent } from './partecipa/partecipa.component';
 import { LocationComponent } from './location/location.component';
 import { DettagliComponent } from './dettagli/dettagli.component';
 import { GalleriaComponent } from './galleria/galleria.component';
+import { AdminAnalyticsComponent } from './admin-analytics/admin-analytics.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { GalleriaComponent } from './galleria/galleria.component';
     LocationComponent,
     DettagliComponent,
     GalleriaComponent,
+    AdminAnalyticsComponent,
   ],
   imports: [
     BrowserModule,

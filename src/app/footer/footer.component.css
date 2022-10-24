@@ -3,7 +3,6 @@ footer {
     height: 400px;
     color: white;
     padding: 20px 30px;
-
     font-family: 'Poppins';
 }
 
@@ -38,7 +37,7 @@ a:any-link:hover{
     width: 400px;
     justify-content: space-around;
     align-items: center;
-    padding: 20px 10px;
+    padding: 20px 0px;
     border-bottom: 1px solid white;
 }
 

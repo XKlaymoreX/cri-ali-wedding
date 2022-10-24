@@ -10,11 +10,11 @@ export class OurStorySectionComponent implements OnInit {
 
 
    storyItems : StoryItem[] = [ 
-    new StoryItem("assets/main.jpeg","Marzo","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo diam, commodo a fringilla vel, feugiat id justo. Curabitur eget ipsum id orci luctus auctor. Quisque nulla erat, porta in massa id, finibus finibus velit. "), 
-    new StoryItem("assets/main.jpeg","Aprile","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo diam, commodo a fringilla vel, feugiat id justo. Curabitur eget ipsum id orci luctus auctor. Quisque nulla erat, porta in massa id, finibus finibus velit. "), 
-    new StoryItem("assets/main.jpeg","Maggio","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo diam, commodo a fringilla vel, feugiat id justo. Curabitur eget ipsum id orci luctus auctor. Quisque nulla erat, porta in massa id, finibus finibus velit. "), 
-    new StoryItem("assets/main.jpeg","Giugno","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo diam, commodo a fringilla vel, feugiat id justo. Curabitur eget ipsum id orci luctus auctor. Quisque nulla erat, porta in massa id, finibus finibus velit. "), 
-    new StoryItem("assets/main.jpeg","Luglio","Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo diam, commodo a fringilla vel, feugiat id justo. Curabitur eget ipsum id orci luctus auctor. Quisque nulla erat, porta in massa id, finibus finibus velit. "), 
+    new StoryItem("assets/main.jpeg","Marzo","Tutto é iniziato"), 
+    new StoryItem("assets/main.jpeg","Aprile","Sempre più uniti..."), 
+    new StoryItem("assets/main.jpeg","Maggio","Passo dopo passo..."), 
+    new StoryItem("assets/main.jpeg","Giugno","Vacanze insieme!"), 
+    new StoryItem("assets/main.jpeg","Luglio","Tutti a Tenerife! "), 
   ]
 
 

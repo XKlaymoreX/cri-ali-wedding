@@ -68,6 +68,10 @@
     display: none;
 }
 
+.invite-to-action-text{
+    margin-top: 50px;
+}
+
 
 @media(max-width: 768px){
     .myPicture{

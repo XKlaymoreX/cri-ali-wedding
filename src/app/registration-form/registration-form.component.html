@@ -1,15 +1,8 @@
 <section>
     <div class="confirmSection mx-auto my-4 ">
-        <!-- <div *ngIf="progress < 3">
-
-            <p class="mx-4 font-italic h4 text-center wc-text">
-                Vuoi passare il giorno più bello della nostra vita insieme a noi?
-            </p>
-            <p class="mx-4 h6 text-center wc-neutral">
-                Notifica la tua partecipazione registrandoti con il form qui sotto!
-            </p>
+        <!-- <div *ngIf="progress < 3" class="px-4" style="font-weight: bold;">
+            <p>Registrazione</p>
         </div> -->
-
         <form (submit)="submitForm($event,form)" class="form myForm " #form="ngForm">
             <div class="form-1"
                 [ngStyle]="{display:progress == 1 ? 'block' : 'none',transition:'.5s', 'min-height':'400px'}">

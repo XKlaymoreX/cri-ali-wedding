@@ -2,17 +2,24 @@
     background-color: #5881b3;
 */
 
-section{
-    height: 800px;
+
+
+* {
+    text-align: center;
+}
+
+h3{
+    color: #5881B3;
 }
 
 /*Countdown*/
 .countdown {
-    width: auto;
+    width: 600px;
     height: 150px;
     display: flex;
     justify-content: space-evenly;
     user-select: none;
+    margin: auto;
 }
 .countdown-item {
     width: 100px;
@@ -20,7 +27,8 @@ section{
     font-weight: bold;
     color: white;
     margin: 20px;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid #5881B3;
+    box-shadow: 5px 5px 10px #5881B3;
 }
 .countdown-item>.detail {
     height: 20%;
@@ -28,12 +36,12 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: #5881B3;
 }
 .countdown-item>.value {
     height: 80%;
     font-size: 30px;
-    color: black;
+    color: #5881B3;
     display: flex;
     justify-content: center;
     align-items: center;
