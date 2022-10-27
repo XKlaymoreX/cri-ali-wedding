@@ -27,6 +27,7 @@ export class RegistrationFormComponent  {
 
   constructor(firebaseDb: FireDatabase) {
     this.db = new Database(firebaseDb)
+
   }
 
   submitForm = (event:any, form: NgForm) => {

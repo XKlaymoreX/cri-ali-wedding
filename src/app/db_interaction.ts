@@ -11,6 +11,21 @@ export class Database {
     }
 
 
+    // createImagesNames  = async () => {
+    //     let imagesNr : number = 87
+    //     let i : number = 0
+    //     try {
+    //         do{
+    //             let nr:any = (i+1).toString().length == 1 ? "0"+(i+1) : i+1
+    //             await set(ref(this.database,"immagini/img-"+nr), "")                
+    //             i++
+    //         }while(i < imagesNr)
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
+
+
     retrieveData =  (endpoint: string, dbRef : DatabaseReference = ref(this.database)) : Promise<string> => 
              get(child(dbRef,endpoint)).then((snapshot) => {
                 if(snapshot.exists)

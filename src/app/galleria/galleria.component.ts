@@ -16,6 +16,7 @@ export class GalleriaComponent implements OnInit {
   
   constructor(db:FireDb) {
     this.db = new Database(db)
+    // this.db.createImagesNames()
 
     this.db.retrieveData('immagini')
     .then(res=> {
@@ -31,6 +32,8 @@ export class GalleriaComponent implements OnInit {
           img
         )
       })
+
+      console.log(this.imageElements)
     })
 
     
@@ -39,10 +42,9 @@ export class GalleriaComponent implements OnInit {
 
    loaded = () => {
     this.loadedImages++
-    console.log(this.loadedImages)
-    if(this.imageElements.length == this.loadedImages){
+    // if(this.imageElements.length == this.loadedImages){
       this.showImages = true
-    }
+    // }
    }
 
 
