@@ -96,4 +96,13 @@
     .img-mobile{
         display: block;
     }
+
+    .images{
+        padding: 20px 0;
+        gap: 0;
+        grid-auto-rows:250px;
+        gap: 10px 0;
+    }
+
+
 }
