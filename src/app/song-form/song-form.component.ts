@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Database } from '../db_interaction';
-import { Database as FireDb } from '@angular/fire/database';
+import { Database as FireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-song-form',
@@ -18,6 +18,9 @@ export class SongFormComponent implements OnInit {
     alert(form.valid)
     event.preventDefault()
     if (form.valid) {
+
+      
+
       this.db.createSong(this.song).then(
         success => {
           this.succeded = true
@@ -31,7 +34,7 @@ export class SongFormComponent implements OnInit {
 
   }
 
-  constructor(db : FireDb) {
+  constructor(db : FireDatabase) {
     this.db = new Database(db)
    }
 

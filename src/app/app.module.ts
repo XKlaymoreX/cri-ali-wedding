@@ -9,7 +9,7 @@ import { MainComponent } from './main/main.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideDatabase,getDatabase, Database, DatabaseModule } from '@angular/fire/database';
 import { FormsModule } from '@angular/forms';
 import { LandingSectionComponent } from './main/landing-section/landing-section.component';
 import { CountdownSectionComponent } from './main/countdown-section/countdown-section.component';
@@ -49,7 +49,6 @@ import { AdminAnalyticsComponent } from './admin-analytics/admin-analytics.compo
     provideDatabase(() => getDatabase()),
   ],
   providers: [
-  
   ],
   bootstrap: [AppComponent]
 })

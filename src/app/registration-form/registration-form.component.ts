@@ -1,8 +1,8 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Database as FireDb } from '@angular/fire/database';
 import { NgModel, NgForm } from '@angular/forms';
 import { Database } from '../db_interaction';
 import Invitation from '../Invitation.class';
+import { Database as FireDatabase } from '@angular/fire/database';
 
 
 @Component({
@@ -25,7 +25,7 @@ export class RegistrationFormComponent  {
     ]
   db: Database
 
-  constructor(firebaseDb: FireDb) {
+  constructor(firebaseDb: FireDatabase) {
     this.db = new Database(firebaseDb)
   }
 

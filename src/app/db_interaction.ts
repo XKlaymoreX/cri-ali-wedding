@@ -1,9 +1,6 @@
-import {Database as FireDb, ref, set,push} from "@angular/fire/database"
+import {Database as FireDb, ref, set, get, child, getDatabase, DatabaseReference} from "@angular/fire/database"
 import Invitation from "./Invitation.class"
 
-export class Response {
-
-}
 
 export class Database {
 
@@ -14,7 +11,14 @@ export class Database {
     }
 
 
+    retrieveData =  (endpoint: string, dbRef : DatabaseReference = ref(this.database)) : Promise<string> => 
+             get(child(dbRef,endpoint)).then((snapshot) => {
+                if(snapshot.exists)
+                    return snapshot.val()
+                }).catch(err => console.log(err))
+
     createInvitation = async (invitation : Invitation): Promise<boolean> => {
+
         const endPoint = "partecipazioni/"+(invitation.cognome.concat("-"+invitation.nome).toLowerCase())
         try {
            await set(ref(this.database,endPoint),invitation)

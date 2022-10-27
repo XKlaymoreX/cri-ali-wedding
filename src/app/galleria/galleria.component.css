@@ -68,6 +68,20 @@
     display: none;
 }
 
+
+.images{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.images > img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
 @media(max-width: 768px){
     .myPicture{
         height: calc(70vh);
