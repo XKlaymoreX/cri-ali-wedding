@@ -21,7 +21,6 @@ export class GalleriaComponent implements OnInit {
     
     this.db = new Database(db)
 
-    let imagesNumber: number = 79
     let counter:number = 0
 
     do{
@@ -34,7 +33,7 @@ export class GalleriaComponent implements OnInit {
 
       this.imageElements.push(img)
       counter++
-    }while(counter < 79)
+    }while(counter < 71)
 
       this.imageElements = this.imageElements
         .map(value => ({value, sort:Math.random()}))
