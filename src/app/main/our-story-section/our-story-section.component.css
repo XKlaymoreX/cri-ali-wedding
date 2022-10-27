@@ -66,9 +66,20 @@ span {
 
 }
 
-@media(max-width: 768px){
+@media (max-width: 768px){
+
+    .story-content{
+        display: flex;
+        flex-flow: column;
+        border-bottom:  1px solid #ccc;
+    }
+
+    .story-content > * {
+        padding: 10px 0;
+    }
+
     .story-timeline{
-        left: 100px
+        display: none;
     }
 
     .story-content-reversed > :nth-child(2){

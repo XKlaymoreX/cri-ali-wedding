@@ -12,3 +12,16 @@ img {
     object-position: center 0;
     box-shadow: 5px 5px 10px #ccc;
 }
+
+
+@media (max-width: 768px){
+
+    div{
+        width: fit-content;
+    }
+
+    img{    
+        border-radius: 6px;
+    }
+
+}
