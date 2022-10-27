@@ -32,7 +32,6 @@ export class GalleriaComponent implements OnInit {
       img.src = "assets/galleria/"+(counter+1).toString() + ".jpeg"
       img.alt = 'img-'+(counter+1).toString()
 
-      console.log(img)
       this.imageElements.push(img)
       counter++
     }while(counter < 79)
@@ -46,7 +45,6 @@ export class GalleriaComponent implements OnInit {
 
    loaded = () => {
     this.loadedImages++
-    console.log(this.loadedImages)
     if(this.imageElements.length == this.loadedImages){
       this.showImages = true
     }
