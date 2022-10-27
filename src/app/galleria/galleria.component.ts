@@ -33,7 +33,10 @@ export class GalleriaComponent implements OnInit {
         )
       })
 
-      console.log(this.imageElements)
+      this.imageElements = this.imageElements
+        .map(value => ({value, sort:Math.random()}))
+        .sort((a,b) => a.sort - b.sort)
+        .map(({value}) => value)
     })
 
     
@@ -42,9 +45,9 @@ export class GalleriaComponent implements OnInit {
 
    loaded = () => {
     this.loadedImages++
-    // if(this.imageElements.length == this.loadedImages){
+    if(this.imageElements.length == this.loadedImages){
       this.showImages = true
-    // }
+    }
    }
 
 
