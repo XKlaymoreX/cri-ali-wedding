@@ -68,6 +68,10 @@ span {
 
 @media (max-width: 768px){
 
+
+    span{
+        z-index: -999;
+    }
     .story-content{
         display: flex;
         flex-flow: column;

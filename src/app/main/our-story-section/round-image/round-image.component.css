@@ -17,7 +17,7 @@ img {
 @media (max-width: 768px){
 
     div{
-        width: fit-content;
+        width: auto;
     }
 
     img{    
