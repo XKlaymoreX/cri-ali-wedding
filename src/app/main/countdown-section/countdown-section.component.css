@@ -30,7 +30,7 @@ section{
     padding: 0 20px;
 }
 .countdown-item {
-    width: 100px;
+    width: 110px;
     height: 100px;
     font-weight: bold;
     color: white;
@@ -39,9 +39,9 @@ section{
     /* border-bottom: 3px solid #ccc; */
     /* box-shadow: 5px 5px 10px #5881B3; */
     box-shadow: 5px 5px 10px #ccc;
-    padding: 0 5px;
 }
 .countdown-item>.detail {
+    width: 100%;
     height: 20%;
     font-size: 13px;
     display: flex;
@@ -52,6 +52,7 @@ section{
     background-color: rgb(188, 0, 0);
 }
 .countdown-item>.value {
+    width: 100%;
     height: 80%;
     font-size: 30px;
     /* color: #5881B3; */
@@ -63,7 +64,7 @@ section{
 
 
 @media (max-width: 768px){
-    .countdown-item{
+    /* .countdown-item{
         box-shadow: none;
-    }
+    } */
 }
