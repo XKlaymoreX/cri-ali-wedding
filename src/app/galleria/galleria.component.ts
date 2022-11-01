@@ -33,7 +33,7 @@ export class GalleriaComponent implements OnInit {
 
       this.imageElements.push(img)
       counter++
-    }while(counter < 71)
+    }while(counter < 58)
 
       this.imageElements = this.imageElements
         .map(value => ({value, sort:Math.random()}))

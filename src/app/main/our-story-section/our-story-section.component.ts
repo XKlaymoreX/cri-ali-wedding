@@ -18,7 +18,7 @@ export class OurStorySectionComponent implements OnInit {
     /*
     new StoryItem("assets/galleria/61.jpeg","25 Novembre 2022","La proposta 💍✨"), 
     */
-    new StoryItem("assets/galleria/63.jpeg","27 Luglio 2023","Il nostro giorno ❤️"), 
+    new StoryItem("assets/galleria/58.jpeg","27 Luglio 2023","Il nostro giorno ❤️"), 
   ]
 
 
