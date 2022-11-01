@@ -21,6 +21,7 @@ img {
     }
 
     img{    
+        width: auto;
         border-radius: 6px;
     }
 

@@ -38,6 +38,7 @@ span {
     width: 100%;
     margin: 20px 0;
 
+
 }
 
 .story-content-reversed> :first-child {
@@ -58,6 +59,7 @@ span {
     justify-content: center;
     align-items: center;
     font-weight: bold;
+
 }
 
 .story-content > p {
@@ -68,13 +70,13 @@ span {
 
 @media (max-width: 768px){
 
-
     span{
         z-index: -999;
     }
     .story-content{
         display: flex;
         flex-flow: column;
+        align-items: center;
         border-bottom:  1px solid #ccc;
     }
 
