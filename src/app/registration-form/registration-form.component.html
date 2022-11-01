@@ -128,7 +128,7 @@
                     >
                     {{progress == 2 ? 'Invia' : 'Prossimo'}}
                 </button>
-                <input type="submit" (click)="incrementProgress()" class="btn text-white w-25 my-4 btn-success" [ngStyle]="{display: progress >= 3 ? 'none' : 'block'}"
+                <input type="submit" (click)="incrementProgress()" class="btn text-white w-25 my-4 btn-success" [ngStyle]="{display: progress >= 3 ? 'none' : 'block', 'min-width':'150px'}"
                 *ngIf="progress >= 2" value="Invia" 
                 />
             </div>
