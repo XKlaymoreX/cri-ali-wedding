@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Database as FireDb, object } from '@angular/fire/database';
 import { Database } from '../db_interaction';
+import { LoadingStateProviderComponent } from '../loading-state-provider/loading-state-provider.component';
 
 
 @Component({
   selector: 'app-galleria',
   templateUrl: './galleria.component.html',
-  styleUrls: ['./galleria.component.css']
+  styleUrls: ['./galleria.component.css'],
+  providers: [LoadingStateProviderComponent]
 })
 export class GalleriaComponent implements OnInit {
 
@@ -17,9 +19,8 @@ export class GalleriaComponent implements OnInit {
   loadedImages : number = 0
   showImages : boolean = false
   
-  constructor(db:FireDb) {
+  constructor( loadingState: LoadingStateProviderComponent) {
     
-    this.db = new Database(db)
 
     let counter:number = 0
 
@@ -47,6 +48,8 @@ export class GalleriaComponent implements OnInit {
     if(this.imageElements.length == this.loadedImages){
       this.showImages = true
     }
+
+
    }
 
 

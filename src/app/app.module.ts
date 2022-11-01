@@ -21,6 +21,7 @@ import { LocationComponent } from './location/location.component';
 import { DettagliComponent } from './dettagli/dettagli.component';
 import { GalleriaComponent } from './galleria/galleria.component';
 import { AdminAnalyticsComponent } from './admin-analytics/admin-analytics.component';
+import { LoadingStateProviderComponent } from './loading-state-provider/loading-state-provider.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AdminAnalyticsComponent } from './admin-analytics/admin-analytics.compo
     DettagliComponent,
     GalleriaComponent,
     AdminAnalyticsComponent,
+    LoadingStateProviderComponent,
   ],
   imports: [
     BrowserModule,

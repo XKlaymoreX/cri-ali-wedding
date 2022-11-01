@@ -9,10 +9,10 @@
         <img src="assets/galleria.jpeg" class="img" alt="Cristian e Alizée - Galleria" />
         <img src="assets/galleria-mobile.jpeg" alt="Cristian e Alizée - Mobile" class="img-mobile" />
     </div>
-    <div class="loading" [hidden]="showImages" >
+    <!-- <div class="loading" [hidden]="showImages" >
         <div class="lds-heart" ><div></div> </div>
         <span>Sto Caricando...</span>
-    </div>
+    </div> -->
     <div class="images">
         <img [ngStyle]="{display: showImages ? 'block' : 'none'}" *ngFor="let image of imageElements" [src]="image.src" alt="{{image.alt}}"  />
     </div>
