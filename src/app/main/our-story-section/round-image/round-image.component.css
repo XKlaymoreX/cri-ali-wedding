@@ -18,10 +18,12 @@ img {
 
     div{
         width: auto;
+        
     }
 
     img{    
         width: auto;
+        max-width: 90%;
         border-radius: 6px;
     }
 
