@@ -39,6 +39,7 @@ section{
     /* border-bottom: 3px solid #ccc; */
     /* box-shadow: 5px 5px 10px #5881B3; */
     box-shadow: 5px 5px 10px #ccc;
+    padding: 0 5px;
 }
 .countdown-item>.detail {
     height: 20%;
