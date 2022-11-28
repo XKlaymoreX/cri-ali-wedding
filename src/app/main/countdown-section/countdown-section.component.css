@@ -53,7 +53,7 @@ section{
     align-items: center;
     /* color: #5881B3; */
     color: white;
-    background-color: rgb(188, 0, 0);
+    background-color: #5881B3;
 }
 .countdown-item>.value {
     width: 100%;
