@@ -27,7 +27,7 @@ export class LoadingStateProviderComponent  {
   ]
   
   sectionImagesNumber : number = 13
-  galleryImagesNumber : number = 58
+  galleryImagesNumber : number = 41
 
   loadedImages : number = 0
 

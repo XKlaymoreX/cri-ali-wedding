@@ -13,22 +13,18 @@ export class NavbarComponent implements OnInit {
   expandNavbar = () => this.toggled = !this.toggled
 
   constructor( private router : Router) { 
+  }
 
+  ngOnInit(): void {
     this.router.events.subscribe((event: Event) => {
-
       if(event instanceof NavigationStart){
         //Navigation starts
       }
       if (event instanceof NavigationEnd) {
         //Navigation ends, the url sets to the current route
         this.currentRoute = event.url;    
-
     }
     })
-
-  }
-
-  ngOnInit(): void {
   }
 
 }

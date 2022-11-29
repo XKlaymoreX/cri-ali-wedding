@@ -1,11 +1,7 @@
 <section>
     <div class="confirmSection mx-auto my-4 ">
-        <!-- <div *ngIf="progress < 3" class="px-4" style="font-weight: bold;">
-            <p>Registrazione</p>
-        </div> -->
-        <form (submit)="submitForm($event,form)" class="form myForm " #form="ngForm">
-            <div class="form-1"
-                [ngStyle]="{display:progress == 1 ? 'block' : 'none',transition:'.5s', 'min-height':'400px'}">
+        <form (submit)="submitForm($event,form)" class="form myForm " #form="ngForm" *ngIf="!registrationSuccess">
+            <div class="form-1" *ngIf="progress == 1">
                 <!-- PRIMA RIGA -->
 
                 <!-- NOME -->
@@ -14,35 +10,27 @@
                         <div class="form-group my-3">
                             <label class="label wc-neutral">Nome</label>
 
-                            <input 
-                                type="text" 
-                                name="nome" 
-                                class="form-control w-input form-control-md" 
-                                [ngClass]="{'w-input-invalid':nome.invalid && nome.touched ? true : false}" 
-                                [(ngModel)]="this.invitation.nome" 
-                                #nome="ngModel" 
-                                required
-                                minlength="3"/>
-                                <small class="text-danger " *ngIf="nome.touched && nome.errors?.['minlength']">Inserire almeno 3 caratteri</small>
-                                <small class="text-danger " *ngIf="nome.touched && nome.errors?.['required']">Campo Obbligatorio</small>
+                            <input type="text" placeholder="nome" name="nome" class="form-control w-input form-control-md"
+                                [ngClass]="{'w-input-invalid':nome.invalid && nome.touched ? true : false}"
+                                [(ngModel)]="this.invitation.nome" #nome="ngModel" required minlength="3" />
+                            <small class="text-danger " *ngIf="nome.touched && nome.errors?.['minlength']">Inserire
+                                almeno 3 caratteri</small>
+                            <small class="text-danger " *ngIf="nome.touched && nome.errors?.['required']">Campo
+                                Obbligatorio</small>
                         </div>
                     </div>
                     <!-- COGNOME -->
                     <div class="col-sm">
                         <div class="form-group my-3">
                             <label class="label wc-neutral">Cognome</label>
-                            <input
-                                type="text"
-                                name="cognome"
-                                class="form-control w-input form-control-md"
-                                [ngClass]="{'w-input-invalid':cognome.invalid && cognome.touched ? true : false}" 
-                                [(ngModel)]="this.invitation.cognome"
-                                #cognome="ngModel"
-                                required
-                                minlength="3"
-                                />
-                                <small class="text-danger " *ngIf="cognome.touched && cognome.errors?.['minlength']">Inserire almeno 3 caratteri</small>
-                                <small class="text-danger " *ngIf="cognome.touched && cognome.errors?.['required']">Campo Obbligatorio</small>
+                            <input type="text" placeholder="cognome" name="cognome" class="form-control w-input form-control-md"
+                                [ngClass]="{'w-input-invalid':cognome.invalid && cognome.touched ? true : false}"
+                                [(ngModel)]="this.invitation.cognome" #cognome="ngModel" required minlength="3" />
+                            <small class="text-danger "
+                                *ngIf="cognome.touched && cognome.errors?.['minlength']">Inserire almeno 3
+                                caratteri</small>
+                            <small class="text-danger " *ngIf="cognome.touched && cognome.errors?.['required']">Campo
+                                Obbligatorio</small>
                         </div>
                     </div>
                 </div>
@@ -53,19 +41,18 @@
                     <div class="col-sm">
                         <div class="form-group my-3">
                             <label class="label wc-neutral">Quanti adulti?</label>
-                            <input 
-                                type="number" 
-                                name="numero_adulti" 
-                                class="form-control w-input form-control-md"
+                            <input type="number" name="numero_adulti" class="form-control w-input form-control-md"
                                 [ngClass]="{'w-input-invalid':numero_adulti.invalid && numero_adulti.touched ? true : false}"
-                                [(ngModel)]="this.invitation.numeroAdulti"
-                                #numero_adulti="ngModel"
-                                max="10" 
-                                min="1" 
-                                />
-                                <small class="text-danger " *ngIf="numero_adulti.touched && numero_adulti.errors?.['min']">Numero minimo richiesto: 1</small>
-                                <small class="text-danger " *ngIf="numero_adulti.touched && numero_adulti.errors?.['max']">Numero massimo possibile: 10</small>
-                                <small class="text-danger " *ngIf="numero_adulti.touched && numero_adulti.errors?.['required']">Campo Obbligatorio</small>
+                                [(ngModel)]="this.invitation.numeroAdulti" #numero_adulti="ngModel" max="10" min="1" />
+                            <small class="text-danger "
+                                *ngIf="numero_adulti.touched && numero_adulti.errors?.['min']">Numero minimo richiesto:
+                                1</small>
+                            <small class="text-danger "
+                                *ngIf="numero_adulti.touched && numero_adulti.errors?.['max']">Numero massimo possibile:
+                                10</small>
+                            <small class="text-danger "
+                                *ngIf="numero_adulti.touched && numero_adulti.errors?.['required']">Campo
+                                Obbligatorio</small>
                         </div>
                     </div>
 
@@ -73,66 +60,66 @@
                     <div class="col-sm">
                         <div class="form-group my-3">
                             <label class="label wc-neutral">Quanti bambini? (0-8 anni)</label>
-                            <input 
-                                type="number" 
-                                name="numero_bambini" 
-                                class="form-control w-input form-control-md"
+                            <input type="number" name="numero_bambini" class="form-control w-input form-control-md"
                                 [ngClass]="{'w-input-invalid':numero_bambini.invalid && numero_bambini.touched ? true : false}"
-                                [(ngModel)]="this.invitation.numeroBambini"
-                                #numero_bambini="ngModel"
-                                max="10" 
+                                [(ngModel)]="this.invitation.numeroBambini" #numero_bambini="ngModel" max="10"
                                 min="0" />
-                                <small class="text-danger " *ngIf="numero_bambini.touched && numero_bambini.errors?.['min']">Numero minimo: 0</small>
-                                <small class="text-danger " *ngIf="numero_bambini.touched && numero_bambini.errors?.['max']">Numero massimo possibile: 10</small>
-                                <small class="text-danger " *ngIf="numero_bambini.touched && numero_bambini.errors?.['required']">Campo Obbligatorio</small>
+                            <small class="text-danger "
+                                *ngIf="numero_bambini.touched && numero_bambini.errors?.['min']">Numero minimo:
+                                0</small>
+                            <small class="text-danger "
+                                *ngIf="numero_bambini.touched && numero_bambini.errors?.['max']">Numero massimo
+                                possibile: 10</small>
+                            <small class="text-danger "
+                                *ngIf="numero_bambini.touched && numero_bambini.errors?.['required']">Campo
+                                Obbligatorio</small>
                         </div>
                     </div>
                 </div>
                 <small class="text-muted py-2">É sufficiente indicare il nome/cognome del capo familgia</small>
 
             </div>
-            <div class="form-2"
-                [ngStyle]="{display:progress == 2 ? 'block' : 'none',transition:'.5s','min-height':'400px'}">
+            <div class="form-2" *ngIf="progress == 2">
                 <div class="row my-4">
                     <div class="col-sm">
                         <div class="form-group my-3">
                             <label class="label wc-neutral">Dettagli</label>
                             <textarea name="dettagli" class="form-control w-input form-control-md "
                                 style="min-height: 300px ;"
-                                placeholder="Per piacere, indicare ogni dettaglio che possa essere utile agli sposi. (Es. Allergie, esigenze particolari)" [(ngModel)]="this.invitation.dettagli"></textarea>
+                                placeholder="Per piacere, indicare ogni dettaglio che possa essere utile agli sposi. (Es. Allergie, esigenze particolari)"
+                                [(ngModel)]="this.invitation.dettagli"></textarea>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Progress Subtitle -->
-            <p class="text-center h6" [ngClass]="{'text-center h6':true, 'text-success':progress == 3}">
+            <p class="text-center h6 progress-subtitle" [ngClass]="{'text-center h6':true, 'text-success':progress == 3}">
                 {{progressSubtitles[progress-1]}}
             </p>
             <!-- Progress Bar  -->
-            <div class="progress-bar mx-auto w-100 d-flex justify-content-between flex-row border"
+            <!-- <div class="progress-bar mx-auto w-100 d-flex justify-content-between flex-row border"
                 [ngClass]="{'bg-success': progress >= 3, 'wc-bg':progress <= 2}">
                 <div [ngClass]="{'bg-white':true,'wc-text':progress >= 3, 'text-success':progress >= 3,'wc-border-2':progress <= 2, 'border border-success':progress >=3}"
                     [ngStyle]="{width:progress == 1 ? '50%' : (progress == 2 ? '99%' : '100%'),transition:'.5s'}">
                     {{progressPercentage}}%
                 </div>
-            </div>
-            <div class="row my-4 d-flex justify-content-between" >
+            </div> -->
+            <div class="row my-4 d-flex justify-content-between">
                 <button type="button" (click)="decrementProgress()" class="btn text-white wc-bg-neutral w-25 my-4"
                     [ngStyle]="{visibility:progress == 2 ? 'visible' : 'hidden'}">
                     Indietro
                 </button>
                 <button type="button" (click)="incrementProgress()" class="btn text-white wc-bg w-25 my-4"
                     [ngClass]="{'btn text-white  w-25 my-4':true,'wc-bg':progress == 1, 'btn-success': progress == 2}"
-                    *ngIf="progress < 2" 
-                    [disabled]="form.invalid"
-                    >
+                    *ngIf="progress < 2" [disabled]="form.invalid">
                     {{progress == 2 ? 'Invia' : 'Prossimo'}}
                 </button>
-                <input type="submit" (click)="incrementProgress()" class="btn text-white w-25 my-4 btn-success" [ngStyle]="{display: progress >= 3 ? 'none' : 'block', 'min-width':'150px'}"
-                *ngIf="progress >= 2" value="Invia" 
-                />
+                <input type="submit" (click)="incrementProgress()" class="btn text-white w-25 my-4 btn-success"
+                    [ngStyle]="{display: progress >= 3 ? 'none' : 'block', 'min-width':'150px'}" *ngIf="progress >= 2"
+                    value="Invia" />
             </div>
         </form>
+        <app-song-form *ngIf="registrationSuccess"></app-song-form>
     </div>
 
 </section>

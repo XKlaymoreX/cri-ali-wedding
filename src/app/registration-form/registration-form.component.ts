@@ -16,6 +16,7 @@ export class RegistrationFormComponent  {
   
   progressPercentage: number = 50
   progress: number = 1
+  registrationSuccess: boolean = false
   progressSubtitles: string[] =
     [
       "Parliamo un po' di voi...",
@@ -37,7 +38,10 @@ export class RegistrationFormComponent  {
       this.invitation
     ).then(success => {
       this.progress++
-      setTimeout(() => window.location.href="/",4000)
+      setTimeout(() => [
+
+      this.registrationSuccess = true
+      ],2000)
     })
   }else{
     alert("qualcosa e' andato storto!")
@@ -46,7 +50,7 @@ export class RegistrationFormComponent  {
 
   }
   incrementProgress = () => {
-    if (this.progress < 2) {
+    if (this.progress < 3) {
       let interval = setInterval(() => {
         if (this.progressPercentage < 99) {
           this.progressPercentage++
