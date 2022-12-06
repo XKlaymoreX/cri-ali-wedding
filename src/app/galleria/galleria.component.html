@@ -14,6 +14,6 @@
         <span>Sto Caricando...</span>
     </div> -->
     <div class="images">
-        <img [ngStyle]="{display: showImages ? 'block' : 'none'}" *ngFor="let image of imageElements" [src]="image.src" alt="{{image.alt}}"  />
+        <img  *ngFor="let image of imageElements" [src]="image.src" alt="{{image.alt}}"  />
     </div>
 </main>

@@ -137,21 +137,15 @@
     }
 
     .myPicture{
-        height: 600px;
+        height: calc(70vh);
     }
  
 }
 
 @media(max-width: 768px){
 
-    .address-section {
-        display: grid;
-        grid-template-rows:.5fr .5fr;
-        grid-template-columns: 1fr;
-    }
-
     .myPicture{
-        height: 600px;
+        height: calc(70vh);
     }
  
 }

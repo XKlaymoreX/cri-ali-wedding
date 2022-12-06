@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoadingStateProviderComponent } from './loading-state-provider/loading-state-provider.component';
+import { LoadingStateServiceService } from './loading-state-service.service';
 
 
 
@@ -12,10 +13,9 @@ import { LoadingStateProviderComponent } from './loading-state-provider/loading-
 
 export class AppComponent {
   title = 'cri-ali-wedding';
-  loader : LoadingStateProviderComponent 
 
-  constructor(loader : LoadingStateProviderComponent){
-    this.loader = loader
+  constructor(private loaderService : LoadingStateServiceService){
+    this.loaderService.loadImages()
   }
 
     

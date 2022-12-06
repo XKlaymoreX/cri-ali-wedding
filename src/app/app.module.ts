@@ -22,6 +22,7 @@ import { DettagliComponent } from './dettagli/dettagli.component';
 import { GalleriaComponent } from './galleria/galleria.component';
 import { AdminAnalyticsComponent } from './admin-analytics/admin-analytics.component';
 import { LoadingStateProviderComponent } from './loading-state-provider/loading-state-provider.component';
+import { LoadingStateServiceService } from './loading-state-service.service';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { LoadingStateProviderComponent } from './loading-state-provider/loading-
     provideDatabase(() => getDatabase()),
   ],
   providers: [
+    LoadingStateServiceService
   ],
   bootstrap: [AppComponent]
 })
