@@ -13,6 +13,7 @@ export class SongFormComponent implements OnInit {
   song: { songName: string, artist: string } = { songName: "", artist: "" }
   succeded: boolean = false
   db : Database
+  accept: boolean = false
 
   submitForm = (event: any, form: NgForm) => {
     event.preventDefault()
@@ -20,6 +21,9 @@ export class SongFormComponent implements OnInit {
       this.db.createSong(this.song).then(
         success => {
           this.succeded = true
+          setTimeout(() => {
+              location.href = "/"
+          }, 1000);
         }
       )
     } else {
@@ -28,6 +32,10 @@ export class SongFormComponent implements OnInit {
     }
 
 
+  }
+
+  redirect = () => {
+    location.href = "/"
   }
 
   constructor(db : FireDatabase) {

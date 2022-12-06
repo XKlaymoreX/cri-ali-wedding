@@ -21,8 +21,7 @@ export class RegistrationFormComponent  {
     [
       "Parliamo un po' di voi...",
       "Ultimo step 😁",
-      "Sto Inviando la registrazione...",
-      "Completato! Verrai re-indirizzato a breve ✅"
+      "Ottimo, registro il tuo invito... ❤️",
     ]
   db: Database
 
@@ -38,10 +37,7 @@ export class RegistrationFormComponent  {
       this.invitation
     ).then(success => {
       this.progress++
-      setTimeout(() => [
-
-      this.registrationSuccess = true
-      ],2000)
+      this.registrationSuccess = true;
     })
   }else{
     alert("qualcosa e' andato storto!")
