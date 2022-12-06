@@ -36,7 +36,9 @@ export class LoadingStateServiceService{
 
 
   loadImages = () => {
+    this.isWebsiteLoaded.emit(false)
     let counterGallery = 0
+    this.loadedImages = 0
     //Loading Gallery Images
     do{
       let img= new Image()

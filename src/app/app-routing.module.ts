@@ -6,7 +6,6 @@ import { GalleriaComponent } from './galleria/galleria.component';
 import { LocationComponent } from './location/location.component';
 import { MainComponent } from './main/main.component';
 import { PartecipaComponent } from './partecipa/partecipa.component';
-import { RegistrationFormComponent } from './registration-form/registration-form.component';
 
 const routes: Routes = [
   {path:'', component: MainComponent},
@@ -21,4 +20,9 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { 
+
+
+
+
+}

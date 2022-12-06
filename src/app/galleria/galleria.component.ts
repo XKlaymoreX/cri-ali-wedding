@@ -19,7 +19,7 @@ export class GalleriaComponent implements OnInit {
   }
     
 
-  ngOnInit(): void {
+  ngOnInit()  {
     this.loaderService.isWebsiteLoaded.subscribe(x => {
         this.imageElements = this.loaderService.galleryImages
     })
