@@ -6,36 +6,19 @@ import { EventEmitter, Injectable, OnInit } from '@angular/core';
 export class LoadingStateServiceService{
 
   isWebsiteLoaded : EventEmitter<boolean> = new EventEmitter<boolean>(false)
-
-  sectionImagesHrefs : string[] =  [
-    "assets/dettagli-mobile.jpeg",
-    "assets/dettagli.jpeg",
-    "assets/galleria-mobile.jpeg",
-    "assets/galleria.jpeg",
-    "assets/main-mobile.jpeg",
-    "assets/main.jpeg",
-    "assets/partecipa-mobile.jpeg",
-    "assets/partecipa.jpeg",
-    "assets/story-1.jpeg",
-    "assets/story-2.jpeg",
-    "assets/story-3.jpeg",
-    "assets/story-4.jpeg",
-    "assets/villa-reale.jpeg",
-  ]
   
-  sectionImagesNumber : number = 13
   galleryImagesNumber : number = 39
-
   loadedImages : number = 0
-
-  sectionImages : HTMLImageElement[] = []
   galleryImages : HTMLImageElement[] = []
 
 
   constructor() { }
 
 
+
+
   loadImages = () => {
+    this.galleryImages = []
     this.isWebsiteLoaded.emit(false)
     let counterGallery = 0
     this.loadedImages = 0
@@ -51,23 +34,11 @@ export class LoadingStateServiceService{
       this.galleryImages.push(img)
       counterGallery++
     }while(counterGallery <  this.galleryImagesNumber)
-
-    //loading section images
-    this.sectionImagesHrefs.forEach((item,index) => {
-      let img= new Image()
-      img.onload = () => {
-        this.loaded()
-      }
-      img.src = item
-      img.alt = "img-".concat(item.split(".").at(0))
-
-      this.sectionImages.push(img)
-    })
   }
 
   loaded = () => {
     this.loadedImages++
-    if(this.loadedImages == (this.sectionImagesNumber + this.galleryImagesNumber)){
+    if(this.loadedImages == ( this.galleryImagesNumber)){
       this.isWebsiteLoaded.emit(true)
     }
   }
