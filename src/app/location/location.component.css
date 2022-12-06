@@ -148,6 +148,9 @@
     padding: 15px 0;
 }
 
+.location-map > a > img {
+    width: 100%;
+}
 
 
 .contact{
@@ -171,7 +174,6 @@
         display: grid;
         grid-template-rows:.5fr .5fr;
         grid-template-columns: 1fr;
-        color: red;
     }
 
     .myPicture{
@@ -186,7 +188,6 @@
         display: grid;
         grid-template-rows:.5fr .5fr;
         grid-template-columns: 1fr;
-        color: green;
     }
 
     .myPicture{
