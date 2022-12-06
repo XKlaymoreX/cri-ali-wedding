@@ -70,7 +70,7 @@
 .address-section{
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: .5fr .5fr;
     padding: 40px 0;
 }
 
@@ -165,26 +165,32 @@
     justify-content: center;
 }
 
-@media(max-width: 900px){
+@media (max-width: 900px){
 
     .address-section {
         display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: none;
+        grid-template-rows:.5fr .5fr;
+        grid-template-columns: 1fr;
+        color: red;
     }
 
     .myPicture{
-        height: calc(70vh);
+        height: 600px;
     }
  
 }
 
 @media(max-width: 768px){
 
-
+    .address-section {
+        display: grid;
+        grid-template-rows:.5fr .5fr;
+        grid-template-columns: 1fr;
+        color: green;
+    }
 
     .myPicture{
-        height: calc(70vh);
+        height: 600px;
     }
  
 }
