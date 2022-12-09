@@ -36,7 +36,6 @@ export class AdminAnalyticsComponent implements OnInit {
   ngOnInit(): void {
     this.db = new Database(this.firebaseDb)
     this.auth = getAuth(this.fire)
-    this.auth.signOut()
     authState(this.auth).subscribe(user => {
       if(user ==null){
         this.loggedIn = false
