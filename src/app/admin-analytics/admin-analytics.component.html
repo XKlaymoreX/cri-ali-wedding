@@ -1,7 +1,73 @@
-<main>
+<main style="overflow-x:hidden ;">
 
+    <div class="myPicture">
+    </div>
 
-    <h2>Admin</h2>
+    <section>
+        <!-- <span class="text-success" *ngIf="loggedIn == true">Successfully Logged In</span> -->
+        <form (submit)="submitForm($event)" [formGroup]="myForm" *ngIf="loggedIn == false">
+            <h3 class="wc-text">Login</h3>
+            <span class="wc-text">Accedi all'area dedicata con la tua E-Mail</span>
+            <div class="row my-4">
+                <div class="col">
+                    <div class="form-group my-3">
+                        <label class="label wc-neutral">E-Mail</label>
+                        <input type="email"  [ngClass]="{'w-input-invalid':myForm.touched && myForm.invalid }" placeholder="email" formControlName="email" class="form-control w-input form-control-md"  />
+                        <small class="text-danger" *ngIf="myForm.touched && myForm.invalid && submitted">Il campo richiede un indirizzo E-Mail valido.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col">
+                    <div class="form-group my-3">
+                        <label class="label wc-neutral">Password</label>
+                        <input type="password"  [ngClass]="{'w-input-invalid':myForm.touched && myForm.invalid }" placeholder="password" formControlName="password" class="form-control w-input form-control-md"  />
+                        <small class="text-danger" *ngIf="myForm.touched && myForm.invalid && submitted">Il campo richiede una password valida.</small>
+                    </div>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-primary wc-bg" value="Accedi">
+        </form>
 
+        <div class="analytics" *ngIf="loggedIn == true">
+            <h4>Partecipazioni</h4>
+            <h5>Totali |</h5>
+            <div class="d-flex justify-content-between align-items-center py-2" style="width: fit-content ;">
+                <span class="bg-primary  rounded text-white " style="padding:0 10px; margin-right: 10px; ">Adulti : {{totalePartecipazioni["adulti"]}}</span>
+                <span class="bg-primary  rounded text-white" style="padding:0 5px;margin-right:  10px;  ">Bambini : {{totalePartecipazioni["bambini"]}}</span>
+                <span class="bg-primary  rounded text-white" style="padding:0 5px; margin-right:  10px; ">Partecipazioni : {{totalePartecipazioni["partecipazioni"]}}</span>
+            </div>
+            <hr>
+            <div class=" container-fluid" >
+                <div class="row titles-row">
+                    <div class="col">Nome</div>
+                    <div class="col">Cognome</div>
+                    <div class="col">Adulti</div>
+                    <div class="col">Bambini</div>
+                    <div class="col">Dettagli</div>
+                </div>
+                <div class="row content-row" *ngFor="let p of displayedData.partecipazioni">
+                    <div class="col">{{p.nome}}</div>
+                    <div class="col">{{p.cognome}}</div>
+                    <div class="col">{{p.numeroAdulti}}</div>
+                    <div class="col">{{p.numeroBambini}}</div>
+                    <div class="col">{{p.dettagli}}</div>
+                </div>
+            </div>
+            <hr>
 
+            <h4>Canzoni</h4>
+            <div class="container-fluid my-4" >
+                <div class="row titles-row">
+                    <div class="col">Nome Canzone</div>
+                    <div class="col">Artista</div>
+                </div>
+                <div class="row content-row" *ngFor="let p of displayedData.canzoni">
+                    <div class="col">{{p.songName}}</div>
+                    <div class="col">{{p.artist}}</div>
+                </div>
+            </div>
+        </div>
+
+    </section>
 </main>

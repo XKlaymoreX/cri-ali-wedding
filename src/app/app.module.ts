@@ -7,10 +7,10 @@ import { SharedComponent } from './shared/shared.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { FirebaseApp, initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideDatabase,getDatabase, Database, DatabaseModule } from '@angular/fire/database';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LandingSectionComponent } from './main/landing-section/landing-section.component';
 import { CountdownSectionComponent } from './main/countdown-section/countdown-section.component';
 import { OurStorySectionComponent } from './main/our-story-section/our-story-section.component';
@@ -48,11 +48,12 @@ import { LoadingStateServiceService } from './loading-state-service.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideDatabase(() => getDatabase()),
   ],
   providers: [
-    LoadingStateServiceService
+    LoadingStateServiceService,
   ],
   bootstrap: [AppComponent]
 })
