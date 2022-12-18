@@ -7,7 +7,7 @@ export class LoadingStateServiceService{
 
   isWebsiteLoaded : EventEmitter<boolean> = new EventEmitter<boolean>(false)
   
-  galleryImagesNumber : number = 39
+  galleryImagesNumber : number = 50
   loadedImages : number = 0
   galleryImages : HTMLImageElement[] = []
 
