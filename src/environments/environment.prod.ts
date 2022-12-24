@@ -10,7 +10,7 @@ export const environment = {
     measurementId: 'G-PTLBNWMRRM',
   },
   cookie: {
-    path:"/",
+    path:"",
     domain:"https://cri-ali.love",
     secure: true
   },
