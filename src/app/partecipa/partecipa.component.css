@@ -4,7 +4,6 @@
     font-family: 'Poppins';
 }
 
-
 .myPicture{
     position: relative;
     width: 100%;
@@ -70,6 +69,12 @@
 
 .invite-to-action-text{
     margin-top: 50px;
+}
+
+.invitation-details {
+    height: auto;
+    min-height: 400px;
+    padding: 80px 0;
 }
 
 

@@ -1,6 +1,8 @@
 <section>
     <div class="confirmSection mx-auto my-4 ">
-        <form (submit)="submitForm($event,form)" class="form myForm " #form="ngForm" *ngIf="!registrationSuccess">
+
+        <form (submit)="submitForm($event,form)" class="form myForm " #form="ngForm"
+            *ngIf="!registrationSuccess && !cookies.isRegistered">
             <div class="form-1" *ngIf="progress == 1">
                 <!-- PRIMA RIGA -->
 
@@ -10,7 +12,8 @@
                         <div class="form-group my-3">
                             <label class="label wc-neutral">Nome</label>
 
-                            <input type="text" placeholder="nome" name="nome" class="form-control w-input form-control-md"
+                            <input type="text" placeholder="nome" name="nome"
+                                class="form-control w-input form-control-md"
                                 [ngClass]="{'w-input-invalid':nome.invalid && nome.touched ? true : false}"
                                 [(ngModel)]="this.invitation.nome" #nome="ngModel" required minlength="3" />
                             <small class="text-danger " *ngIf="nome.touched && nome.errors?.['minlength']">Inserire
@@ -23,7 +26,8 @@
                     <div class="col-sm">
                         <div class="form-group my-3">
                             <label class="label wc-neutral">Cognome</label>
-                            <input type="text" placeholder="cognome" name="cognome" class="form-control w-input form-control-md"
+                            <input type="text" placeholder="cognome" name="cognome"
+                                class="form-control w-input form-control-md"
                                 [ngClass]="{'w-input-invalid':cognome.invalid && cognome.touched ? true : false}"
                                 [(ngModel)]="this.invitation.cognome" #cognome="ngModel" required minlength="3" />
                             <small class="text-danger "
@@ -92,7 +96,8 @@
                 </div>
             </div>
             <!-- Progress Subtitle -->
-            <p class="text-center h6 progress-subtitle" [ngClass]="{'text-center h6':true, 'text-success':progress == 3}">
+            <p class="text-center h6 progress-subtitle"
+                [ngClass]="{'text-center h6':true, 'text-success':progress == 3}">
                 {{progressSubtitles[progress-1]}}
             </p>
             <!-- Progress Bar  -->
@@ -118,7 +123,7 @@
                     value="Invia" />
             </div>
         </form>
-        <app-song-form *ngIf="registrationSuccess"></app-song-form>
+        <app-song-form *ngIf="registrationSuccess && !cookies.songAccepted"></app-song-form>
     </div>
 
 </section>

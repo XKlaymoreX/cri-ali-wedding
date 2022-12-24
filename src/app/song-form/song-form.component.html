@@ -1,7 +1,7 @@
 <section>
 
 
-    <div *ngIf="!accept" >
+    <div *ngIf="!accept && !saveSuccedded" >
         <h4 class="wc-text h5 my-4 text-center">
             Vorresti consigliarci una canzone per la festa? ☺️
         </h4>
@@ -14,8 +14,8 @@
 
 
 
-    <h4 class="wc-text h5 my-4" *ngIf="accept"  [ngStyle]="{display: !succeded ? 'block' : 'none'}">Consigliaci una canzone per la festa 🎉🎵</h4>
-    <form class="form" *ngIf="accept" [ngStyle]="{display:succeded ? 'none' : 'block','position:relative':true}"
+    <h4 class="wc-text h5 my-4" *ngIf="accept"  [ngStyle]="{display: !saveSuccedded ? 'block' : 'none'}">Consigliaci una canzone per la festa 🎉🎵</h4>
+    <form class="form" *ngIf="accept" [ngStyle]="{display:saveSuccedded ? 'none' : 'block','position:relative':true}"
         (submit)="submitForm($event, form)" #form="ngForm">
         <div class="form-group py-2">
             <label for="">Nome Canzone</label>
@@ -35,7 +35,5 @@
         </div>
 
     </form>
-    <div class="text-success d-flex justify-content-center align-items-center font-weight-bold" *ngIf="succeded">
-        Grazie! Verrai Re-Indirizzato a breve alla pagina principale.
-    </div>
+
 </section>

@@ -1,9 +1,9 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgModel, NgForm } from '@angular/forms';
 import { Database } from '../db_interaction';
 import Invitation from '../Invitation.class';
 import { Database as FireDatabase } from '@angular/fire/database';
-import { CookieService } from 'ngx-cookie-service';
+import { CookieOptions, CookieService } from 'ngx-cookie-service';
 import { environment as e } from 'src/environments/environment';
 
 
@@ -12,7 +12,7 @@ import { environment as e } from 'src/environments/environment';
   templateUrl: './registration-form.component.html',
   styleUrls: ['./registration-form.component.css', '../app.component.css']
 })
-export class RegistrationFormComponent  {
+export class RegistrationFormComponent implements OnInit  {
   
   invitation:Invitation = new Invitation("","",0,0,"")
   
@@ -26,12 +26,27 @@ export class RegistrationFormComponent  {
       "Ottimo, registro il tuo invito... ❤️",
     ]
   db: Database
+  cookies 
 
   constructor(
     firebaseDb: FireDatabase,
     private cookie : CookieService
     ) {
     this.db = new Database(firebaseDb)
+
+
+  }
+  ngOnInit(): void {
+
+
+    this.cookies = {
+      isRegistered : this.cookie.get("isRegistered"),
+      songAccepted : this.cookie.get("songAccepted")
+    }
+
+    if(this.cookies.isRegistered){
+      this.registrationSuccess = true
+    }
   }
 
   submitForm = (event:any, form: NgForm) => {
@@ -42,8 +57,8 @@ export class RegistrationFormComponent  {
     ).then(success => {
       this.progress++
       this.registrationSuccess = true;
-      console.log(this.cookie)
-      this.cookie.set("isRegisterd","true",10,e.cookie.path,e.cookie.domain,e.cookie.secure)
+      this.cookie.set("invitation",JSON.stringify(this.invitation),365, e.cookie.path,e.cookie.domain,e.cookie.secure)
+      this.cookie.set("isRegistered","true",365,e.cookie.path,e.cookie.domain,e.cookie.secure)
     })
   }else{
     alert("qualcosa e' andato storto!")
