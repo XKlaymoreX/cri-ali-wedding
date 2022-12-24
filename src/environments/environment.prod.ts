@@ -11,7 +11,7 @@ export const environment = {
   },
   cookie: {
     path:"/",
-    domain:"cri-ali.love",
+    domain:"https://cri-ali.love",
     secure: true
   },
   production: true
