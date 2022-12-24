@@ -14,6 +14,11 @@ export const environment = {
     measurementId: 'G-PTLBNWMRRM',
   },
 
+  cookie: {
+    path:"",
+    domain:"",
+    secure: false
+  },
   production: false
 };
 

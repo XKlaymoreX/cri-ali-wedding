@@ -23,6 +23,7 @@ import { GalleriaComponent } from './galleria/galleria.component';
 import { AdminAnalyticsComponent } from './admin-analytics/admin-analytics.component';
 import { LoadingStateProviderComponent } from './loading-state-provider/loading-state-provider.component';
 import { LoadingStateServiceService } from './loading-state-service.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { LoadingStateServiceService } from './loading-state-service.service';
   ],
   providers: [
     LoadingStateServiceService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

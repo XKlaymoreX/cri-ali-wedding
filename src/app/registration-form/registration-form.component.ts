@@ -3,6 +3,8 @@ import { NgModel, NgForm } from '@angular/forms';
 import { Database } from '../db_interaction';
 import Invitation from '../Invitation.class';
 import { Database as FireDatabase } from '@angular/fire/database';
+import { CookieService } from 'ngx-cookie-service';
+import { environment as e } from 'src/environments/environment';
 
 
 @Component({
@@ -25,9 +27,11 @@ export class RegistrationFormComponent  {
     ]
   db: Database
 
-  constructor(firebaseDb: FireDatabase) {
+  constructor(
+    firebaseDb: FireDatabase,
+    private cookie : CookieService
+    ) {
     this.db = new Database(firebaseDb)
-
   }
 
   submitForm = (event:any, form: NgForm) => {
@@ -38,6 +42,8 @@ export class RegistrationFormComponent  {
     ).then(success => {
       this.progress++
       this.registrationSuccess = true;
+      console.log(this.cookie)
+      this.cookie.set("isRegisterd","true",10,e.cookie.path,e.cookie.domain,e.cookie.secure)
     })
   }else{
     alert("qualcosa e' andato storto!")

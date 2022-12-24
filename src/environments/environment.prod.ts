@@ -9,6 +9,10 @@ export const environment = {
     messagingSenderId: '1086822626836',
     measurementId: 'G-PTLBNWMRRM',
   },
-
+  cookie: {
+    path:"/",
+    domain:"cri-ali.love",
+    secure: true
+  },
   production: true
 };
