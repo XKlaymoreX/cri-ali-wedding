@@ -12,6 +12,7 @@ const routes: Routes = [
   {path:'galleria', component: GalleriaComponent},
   {path:'partecipa', component: PartecipaComponent},
   {path:'admin-analytics', component: AdminAnalyticsComponent},
+  {path:'**', component: MainComponent},
 ];
 
 @NgModule({
