@@ -14,5 +14,7 @@ export const environment = {
     domain:"",
     secure: true
   },
+  endpointOne: "partecipazioni",
+  endpointTwo: "canzoni",
   production: true
 };

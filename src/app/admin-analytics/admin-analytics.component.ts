@@ -5,6 +5,7 @@ import { Database as FireDatabase } from '@angular/fire/database';
 import { Database } from '../db_interaction';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import Invitation from '../Invitation.class';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-admin-analytics',
@@ -44,8 +45,8 @@ export class AdminAnalyticsComponent implements OnInit {
         this.loggedIn = true
         this.db.retrieveData("/")
           .then(val => {
-            this.displayedData.partecipazioni = Object.values(val["partecipazioni"])
-            this.displayedData.canzoni = Object.values(val["canzoni"])
+            this.displayedData.partecipazioni = Object.values(val[environment.endpointOne])
+            this.displayedData.canzoni = Object.values(val[environment.endpointTwo])
           })
           .then(() => {
             this.totalePartecipazioni = {

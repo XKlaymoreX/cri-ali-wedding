@@ -13,12 +13,13 @@ export const environment = {
     messagingSenderId: '1086822626836',
     measurementId: 'G-PTLBNWMRRM',
   },
-
   cookie: {
     path:"",
     domain:"",
     secure: false
   },
+  endpointOne: "partecipazioniDEV",
+  endpointTwo: "canzoniDEV",
   production: false
 };
 

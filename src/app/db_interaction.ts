@@ -1,4 +1,5 @@
 import { Database as FireDb, ref, set, get, child, getDatabase, DatabaseReference } from "@angular/fire/database"
+import { environment } from "src/environments/environment"
 import Invitation from "./Invitation.class"
 
 
@@ -19,7 +20,7 @@ export class Database {
 
     createInvitation = async (invitation: Invitation): Promise<boolean> => {
 
-        const endPoint = "partecipazioni/" + (invitation.cognome.concat("-" + invitation.nome).toLowerCase())
+        const endPoint = environment.endpointOne.concat("/") + (invitation.cognome.concat("-" + invitation.nome).toLowerCase())
         try {
             await set(ref(this.database, endPoint), invitation)
             return true
@@ -30,7 +31,7 @@ export class Database {
     }
 
     createSong = async (song: { songName: string, artist: string }): Promise<boolean> => {
-        const endPoint = "canzoni/" + (song.songName.concat("-" + song.artist).toLowerCase())
+        const endPoint = environment.endpointTwo.concat("/") + (song.songName.concat("-" + song.artist).toLowerCase())
         try {
             await set(ref(this.database, endPoint), song)
             return true
