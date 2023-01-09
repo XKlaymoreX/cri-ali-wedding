@@ -45,15 +45,19 @@ export class AdminAnalyticsComponent implements OnInit {
         this.loggedIn = true
         this.db.retrieveData("/")
           .then(val => {
-            this.displayedData.partecipazioni = Object.values(val[environment.endpointOne])
-            this.displayedData.canzoni = Object.values(val[environment.endpointTwo])
+            var part = val[environment.endpointOne] || {}
+            var canz = val[environment.endpointTwo] || {}
+
+            this.displayedData.partecipazioni = Object.values(part)
+            this.displayedData.canzoni = Object.values(canz)
           })
           .then(() => {
             this.totalePartecipazioni = {
-               adulti: this.displayedData.partecipazioni.map(inv => inv.numeroAdulti).reduce((a,b) => a+b),
-               bambini: this.displayedData.partecipazioni.map(inv => inv.numeroBambini).reduce((a,b) => a+b),
+               adulti: this.displayedData.partecipazioni.map(inv => inv.numeroAdulti).reduce((a,b) => a+b) ,
+               bambini: this.displayedData.partecipazioni.map(inv => inv.numeroBambini).reduce((a,b) => a+b) ,
                partecipazioni: this.displayedData.partecipazioni.length
             }
+
           })
         }
     })
