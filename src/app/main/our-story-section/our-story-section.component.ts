@@ -16,7 +16,7 @@ export class OurStorySectionComponent implements OnInit {
     new StoryItem("assets/story-4.jpeg","Settembre","Conoscenza dei parenti :)"), 
     new StoryItem("assets/galleria/38.jpeg","25 Novembre 2022","La proposta 💍✨"), 
     new StoryItem("assets/villa-reale.jpeg","Dicembre","Iniziano i preparativi. Location, inviti, photoshooting.. quante cose per la testa!🤯"), 
-    new StoryItem("assets/galleria/37.jpeg","27 Luglio 2023","Il nostro giorno ❤️"), 
+    new StoryItem("assets/galleria/37.jpeg","23 Luglio 2023","Il nostro giorno ❤️"), 
   ]
 
 
